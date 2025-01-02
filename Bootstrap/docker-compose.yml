@@ -1,0 +1,6 @@
+﻿services:
+  bootstrap:
+    image: bootstrap
+    build:
+      context: .
+      dockerfile: Bootstrap/Dockerfile
