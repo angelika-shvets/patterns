@@ -1,4 +1,8 @@
-﻿namespace Patterns.Bootstrap;
+﻿using Patterns.Domain;
+using Patterns.Domain.DecoratorPattern;
+using Patterns.Domain.VisitorPattern;
+
+namespace Patterns.Bootstrap;
 
 public class Program
 {
@@ -13,7 +17,7 @@ public class Program
         builder.ConfigureAutofacContainer();
 
         var app = builder.Build();
-
+        
         app.ConfigureApplication();
         
         app.Urls.Add("http://*:8099");

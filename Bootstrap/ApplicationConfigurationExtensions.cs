@@ -1,8 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using NLog.Extensions.Logging;
-using Patterns.Domain;
-using Patterns.Domain.DecoratorPattern;
 using AssemblyAnchor = Patterns.Api.AssemblyAnchor;
 
 
@@ -44,9 +42,6 @@ namespace Patterns.Bootstrap
                 .AddControllersAsServices();
             
             builder.Services.AddMemoryCache();
-            builder.Services.AddScoped<CoffeeDescription>();
-            builder.Services.AddScoped<ICoffeeDescription, CappuccinoDecorator>();
-            builder.Services.AddScoped<ICoffeeDescription, AmericanoDecorator>();
             builder.Services.AddOptions();
             builder.Services.Configure<ApplicationSettings>(builder.Configuration);
             builder.Services.AddHttpClient();
